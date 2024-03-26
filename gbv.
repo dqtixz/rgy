@@ -36,8 +36,6 @@ if part then
 		end
   end
 if not foundGwaGwa then
-print("hello world")
-wait(1)
 		  NotificationLibrary:SendNotification("Info", "GwaGwa Not Found !", 3)
 
 end
