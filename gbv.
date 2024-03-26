@@ -39,15 +39,6 @@ if not foundGwaGwa then
 print("hello world")
 wait(1)
 		  NotificationLibrary:SendNotification("Info", "GwaGwa Not Found !", 3)
-		  end
-wait(2) -- wait for rainbow Pray (Star) remove wait lol
--- Rainbow Pray --
 
-local part = game.Workspace:FindFirstChild("GwaGwa")
-if part then
-    while true do
-        part.BrickColor = BrickColor.Random()
-        wait(1)
-end
 end
 end)
