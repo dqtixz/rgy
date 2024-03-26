@@ -20,6 +20,39 @@ if part then
   --    wait(1) -- wait NotificationLibrary
     NotificationLibrary:SendNotification("Success", "GwaGwa found", 3)
     wait(1)
+local Players = game:GetService("Players")
+local highlightColor = BrickColor.Random().Color
+
+local function changeColor()
+    highlightColor = BrickColor.Random().Color
+end
+
+local function highlightPlayer(player)
+    local character = player.Character
+
+    if character then
+        for _, part in ipairs(character:GetDescendants()) do
+            if part:IsA("BasePart") then
+                local highlight = Instance.new("SelectionBox")
+                highlight.Parent = part
+                highlight.Adornee = part
+                highlight.Color = highlightColor
+                highlight.LineThickness = 0.05
+            end
+        end
+    end
+end
+
+Players.PlayerAdded:Connect(function(player)
+    player.CharacterAdded:Connect(function()
+        highlightPlayer(player)
+    end)
+end)
+
+game:GetService("RunService").Stepped:Connect(function()
+    changeColor()
+end)
+wait(1)
     NotificationLibrary:SendNotification("Warning", "Teleport...", 3)
     wait(2)
      local player = game.Players.LocalPlayer
@@ -35,7 +68,9 @@ if part then
 			end
 		end
   end
-if not foundGwaGwa then
+
+if not foundGwa then or if not foundGwa then
+
 		  NotificationLibrary:SendNotification("Info", "GwaGwa Not Found !", 3)
 
 end
