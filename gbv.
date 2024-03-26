@@ -36,7 +36,8 @@ if part then
 		end
   end
 if not foundGwaGwa then
-	--	  local NotificationLibrary = loadstring(game:HttpGet("https://raw.githubusercontent.com/lobox920/Notification-Library/Main/Library.lua"))()
+print("hello world")
+wait(1)
 		  NotificationLibrary:SendNotification("Info", "GwaGwa Not Found !", 3)
 		  end
 wait(2) -- wait for rainbow Pray (Star) remove wait lol
